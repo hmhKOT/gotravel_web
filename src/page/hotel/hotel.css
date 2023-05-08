@@ -1,0 +1,170 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 245);
+  --cardBG: rgb(225, 225, 235);
+}
+
+.hotelContainer {
+  padding: 5rem 5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hotelContainer .hotelCart {
+  position: absolute;
+  top: 6.5rem;
+  right: 10rem;
+}
+.hotelContainer .hotelCart .btn {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  color: var(--whiteColorDeam);
+}
+.hotelContainer .hotelCart .btn .icon {
+  font-weight: 500;
+}
+.hotelContainer .hotelCart .btn span {
+  font-size: 20px;
+  font-weight: 500;
+}
+.hotelContainer .hotelWapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+}
+.hotelContainer .hotelWapper .hotelTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+.hotelContainer .hotelWapper .hotelAddress .icon {
+  font-size: 18px;
+  color: var(--blackColor);
+}
+.hotelContainer .hotelWapper .hotelAddress .icon:hover {
+  color: var(--PrimaryColor);
+}
+.hotelContainer .hotelWapper .hotelAddress span {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--textColor);
+}
+.hotelContainer .hotelWapper .hotelDistance {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--SecondaryColor);
+}
+.hotelContainer .hotelWapper .hotelPriceHighlight {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--PrimaryColor);
+}
+.hotelContainer .hotelWapper .hotelImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+.hotelContainer .hotelWapper .hotelImages .hotelImgWapper {
+  width: 33%;
+}
+.hotelContainer .hotelWapper .hotelImages .hotelImgWapper .hotelImg {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hotelContainer .hotelWapper .hotelDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  gap: 2rem;
+  width: 100%;
+  height: 100%;
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsText {
+  flex: 3;
+  color: var(--textColor);
+  background: var(--cardBG);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsText:hover {
+  background: white;
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsPrice {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  background-color: var(--cardBG);
+  border-radius: 1rem;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsPrice h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsPrice span {
+  color: var(--textColor);
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsPrice h2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--greyText);
+  border-top: 1px solid var(--greyText);
+  padding: 0.5rem;
+  font-size: 22px;
+  font-weight: 500;
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsPrice .btn {
+  width: 100%;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsPrice .btn .icon {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--whiteColorDeam);
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsPrice .btn span {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--whiteColorDeam);
+}
+.hotelContainer .hotelWapper .hotelDetails .hotelDetailsPrice:hover {
+  background: white;
+}
+
+@media screen and (max-width: 768px) {
+  .hotelContainer {
+    padding-top: 2.5rem;
+  }
+  .hotelContainer .hotelWapper .hotelImages .hotelImgWapper {
+    width: 100%;
+  }
+  .hotelContainer .hotelWapper .hotelDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}/*# sourceMappingURL=hotel.css.map */

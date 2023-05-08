@@ -1,0 +1,197 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 245);
+  --cardBG: rgb(225, 225, 235);
+  --cardHover: rgb(255, 255, 255);
+}
+
+.cartContainer {
+  padding-top: 5rem;
+  display: flex;
+}
+.cartContainer .option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: -moz-max-content;
+  height: max-content;
+  padding-top: 2rem;
+  margin: 10px;
+}
+.cartContainer .option .userFace {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  width: 100%;
+}
+.cartContainer .option .userFace .logo {
+  width: 50px;
+  height: 50px;
+  background: var(--PrimaryColor);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartContainer .option .userFace .logo h1 {
+  color: var(--whiteColorDeam);
+}
+.cartContainer .option .userFace .detailUser {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.cartContainer .option .userFace .detailUser .userName {
+  font-size: 15px;
+  font-weight: 500;
+}
+.cartContainer .option .userFace .detailUser a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: gray;
+}
+.cartContainer .option .userFace .detailUser a:hover {
+  color: var(--PrimaryColor);
+}
+.cartContainer .option .userFace .detailUser a .icon {
+  font-size: 13px;
+}
+.cartContainer .option .onptionItem {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid rgb(224, 215, 215);
+}
+.cartContainer .option .onptionItem:hover {
+  color: var(--PrimaryColor);
+  background: var(--whiteColorDeam);
+}
+.cartContainer .cartWapper {
+  flex: 2;
+  flex-direction: column;
+  padding: 20px;
+  row-gap: 20px;
+}
+.cartContainer .cartWapper .itemCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: -moz-max-content;
+  height: max-content;
+  background: var(--cardBG);
+  padding: 20px;
+  border-radius: 1rem;
+}
+.cartContainer .cartWapper .itemCart:hover {
+  background: var(--whiteColorDeam);
+}
+.cartContainer .cartWapper .itemCart .cartTile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+.cartContainer .cartWapper .itemCart .cartTile .nameTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--blackColor);
+}
+.cartContainer .cartWapper .itemCart .cartTile .nameTitle:hover {
+  color: var(--PrimaryColor);
+}
+.cartContainer .cartWapper .itemCart .cartTile .nameTitle .icon {
+  font-size: 20px;
+  font-weight: 600;
+}
+.cartContainer .cartWapper .itemCart .cartInfo {
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  width: 100%;
+  gap: 10px;
+  position: relative;
+}
+.cartContainer .cartWapper .itemCart .cartInfo img {
+  flex: 1;
+  height: 100px;
+  width: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cartContainer .cartWapper .itemCart .cartInfo .placeInfo {
+  flex: 3;
+}
+.cartContainer .cartWapper .itemCart .cartInfo .placeInfo span {
+  color: var(--textColor);
+  font-size: 15px;
+  font-weight: 500;
+}
+.cartContainer .cartWapper .itemCart .cartInfo .placeInfo p {
+  color: var(--textColor);
+  font-size: 13px;
+}
+.cartContainer .cartWapper .itemCart .cartInfo .numnerInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.cartContainer .cartWapper .itemCart .cartInfo .numnerInfo .roomInfo {
+  display: flex;
+  justify-content: space-between;
+}
+.cartContainer .cartWapper .itemCart .cartInfo .button {
+  width: 100%;
+  padding: 10px;
+}
+.cartContainer .cartWapper .itemCart .button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: right;
+  gap: 10px;
+}
+.cartContainer .cartWapper .itemCart .button .btn {
+  border-radius: 0.5rem;
+  color: var(--whiteColorDeam);
+  font-weight: 800;
+  font-size: 13px;
+}
+.cartContainer .cartWapper .pageChange {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.cartContainer .cartWapper .pageChange .btn {
+  border-radius: 0.2rem;
+  padding: 5px 2rem 5px;
+  color: var(--whiteColorDeam);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartContainer .cartWapper .pageChange .btn .icon {
+  font-size: 20px;
+  font-weight: 800;
+}/*# sourceMappingURL=cart.css.map */
