@@ -26,9 +26,9 @@ const Home = () => {
          <div className="textDiv">
 
 
-         <sapn data-aos="fade-up" className="smallText">
+         <span data-aos="fade-up" className="smallText">
           Our Packages  
-         </sapn>
+         </span>
 
 
          <h1 className="homeTitle" data-aos="fade-up">

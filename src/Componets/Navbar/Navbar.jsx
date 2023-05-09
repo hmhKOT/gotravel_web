@@ -1,4 +1,6 @@
-import React,{useState}from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './navbar.css' 
 import '../../App.css'
 
@@ -7,6 +9,7 @@ import {AiFillCloseCircle} from 'react-icons/ai';
 import {TbGridDots} from 'react-icons/tb'
 import {FaUserCircle} from 'react-icons/fa';
 const Navbar = () => {
+     
      const [active,setActive] = useState('navBar');
      //Function to toggle navBar
      const showNav = ()=>{
@@ -27,23 +30,24 @@ const Navbar = () => {
             <div className={active}>
             <ul className="navLists flex">
              <li className="navItem">
-              <a href='#' className="navLink">Home</a>
+              <Link to="/"  className="navLink">Home</Link>
              </li>
              <li className="navItem">
-              <a href='#' className="navLink">Install App</a>
+              <Link to="/install" className="navLink">Install App</Link>
              </li>
              <li className="navItem">
-              <a href='#' className="navLink">Shop</a>
+              <Link   to="/hotels"  className="navLink">Hotel</Link>
+             </li>
+               
+             <li className="navItem">
+              <Link  to="/cart" className="navLink">Cart</Link>
              </li>
              <li className="navItem">
-              <a href='#' className="navLink">About</a>
-             </li>      
-             <li className="navItem">
-              <a href='#' className="navLink">Contacts</a>
+              <Link  to="/contact" className="navLink">Contacts</Link>
              </li>
              <button className="btn">
               <FaUserCircle className="icon" />
-              <a href='#'>Login</a>
+              <a >Login</a>
              </button>
 
             </ul>

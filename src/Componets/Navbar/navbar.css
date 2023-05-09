@@ -68,11 +68,21 @@
     color: var(--PrimaryColor);
   }
   .header .navBar .navLists .btn {
-    margin-top: 1rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header .navBar .navLists .btn .icon {
+    color: var(--whiteColorDeam);
+    font-size: 24px;
+    font-weight: 500;
   }
   .header .navBar .navLists .btn a {
-    font-weight: 600;
     color: var(--whiteColorDeam);
+    font-weight: 500;
+    font-size: 16px;
   }
   .header .navBar .closeNavbar {
     position: absolute;
