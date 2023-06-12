@@ -13,73 +13,147 @@
   .listContainer{  
     position: relative;
     padding:6.5rem 2rem 2rem ;
-    top: -1rem;
+    top: .2rem;
     .listWapper{
         width: 100%;
-        gap: 20px;
         justify-content: center;
-        display: flex;     
-        .listSearch{
-            flex: 1;          
-            background:var(--cardBG);
-            border: 2px solid var(--PrimaryColor);
-            border-radius: 1rem;
-            padding:20px 10px;
-            position: sticky;
-            top: 5.5rem;
-            bottom: 1rem;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 10px;
-            height: max-content;
-            .listTitle{
-                font-size:22px;
-                font-weight: 600;
-                color: var(--textColor);
-                margin-bottom: 10px;
+        display: flex;  
+        flex-direction: column;  
+        .findBooking{
+            
+            display: flex;
+            flex-direction: row;
+            
+          .option{
+            display: flex;
+            flex-direction:column;
+            .optionTitle{
+                 
+
             }
-            .listSearchItem{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-                height: 100%;
-                color: var(--textColor);
-               label{
-                font-size:18px;
-                font-weight: 500;
+            .active{
+               .icon{
+                color : var(--PrimaryColor);
                }
-               input{
-                font-weight: 600;
-                padding: .5rem;
-                border: none;
-                outline: none;
-                background: rgb(192, 239, 241); 
-                border-radius: .5rem;
-                color: var(--textColor);
-               }    
+               p{
+                color : var(--PrimaryColor)
+               }
             }
-            button{
-                width: 100%;
-                padding: .5rem 1rem;
-                font-size: 13px;
-                font-weight: 600;
-                color: var(--whiteColorDeam);
-                gap: 2px;
-                align-items: center;
-                justify-content: center;
-                border-radius: .2rem;
-                .icon{
-                    font-size:18px;
-                    font-weight:400;
-                  
+          }
+          .detailBooking{
+            width: 100%;
+            box-shadow:  .5px 1px gray;
+            position: relative;
+            margin-bottom:20px;
+            .titleBook{
+                text-align: center;
+                font-size:25px;
+                font-weight: bold;
+            }
+            .hotelDetail{
+                .destination{
+                    width: 100%;
+                   margin: 10px;
+                    .icon{
+                        color:var(--SecondaryColor);
+                        font-size: 2.5rem;
+                    }
+                    input{
+                      width: 80%;
+                      padding: 10px;
+                      border:none;
+                      outline: none;
+                      border-bottom: 1px solid black;
+                      
+                    }
+                }
+                .detailCont{
+                    display: flex;
+                    .date{
+                        margin: 10px;
+                        position: relative;
+                        flex: 1;
+                        .icon{
+                            color: var(--SecondaryColor);
+                        }
+                        .textDate{
+                           
+                            cursor: pointer;
+                            padding: 10px;
+                            border-bottom: 1px solid black;
+                        }
+                        .dateInput{
+                            position: absolute;
+                           
+                        }
+                    }
+                    .detailRoom{
+                        flex: 1;
+                        position: relative;
+                        cursor: pointer;
+                        .icon{
+                            color: var(--SecondaryColor);
+                        }
+                        .detail{
+                            padding: 10px;
+                            border-bottom: 1px solid black;
+                        }
+                        .optionRoom{
+                           position: absolute;
+                           background-color: #ffff;
+                           width: 40%;
+                           display: flex;
+                           flex-direction: column;
+                           border: 1px solid gray;
+                           border-radius: 5%;
+                           .optionItem{
+                             display: flex;
+                             align-items: center;
+                             justify-content: center;
+                             padding: 5px;
+                            
+                             .optionText{
+                                flex: 1;
+                             }
+                             .buttonCounter{
+                                flex: 1;
+                                .optionCounterNumber{
+                                }
+                                .optionCounterButton{
+                                    margin:10px;
+                                    padding: 5px;
+                                    border-radius: 25%;
+                                    background-color: white;
+                                    font-weight: bold;
+                                    
+                                }
+                             }
+                           }
+                        }
+                    }
+                }
+                p{
+                    color:var(--SecondaryColor);
+                    font-weight: 500;
+                    margin: 10px;
                 }
             }
-        }
+            .button{
+                background-color:#ffff;
+                padding:10px;
+                position: absolute;
+                right: 5%;
+                top: 50%;
+                transform: translateY(-50%);
+                span{
+                    font-weight: 600;
+                }
+
+            }
+          }
+        } 
+        
         .listResult{
-            flex: 3;
-          
             .secContent{
                 justify-content: center;
                 gap:1.5rem;
@@ -89,13 +163,12 @@
                     row-gap: 10px;
                     border-radius: 10px;
                     align-items: center;
-                    background: var(--cardBG);
                     box-shadow: 0 2px 4px rgba(140,140,141,0.5);
                     overflow: hidden;
                     padding: 1rem;
                     &:hover{
                         background: var(--cardHover);
-                        box-shadow: 0 2px 4px rgba(85,85,114,0.5);
+                        box-shadow: 0 2px 4px var(--PrimaryColor);
                         transition: .3 ease;
                     }
                     .imageDiv{

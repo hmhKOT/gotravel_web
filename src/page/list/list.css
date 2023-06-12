@@ -14,74 +14,128 @@
 .listContainer {
   position: relative;
   padding: 6.5rem 2rem 2rem;
-  top: -1rem;
+  top: 0.2rem;
 }
 .listContainer .listWapper {
   width: 100%;
-  gap: 20px;
   justify-content: center;
   display: flex;
-}
-.listContainer .listWapper .listSearch {
-  flex: 1;
-  background: var(--cardBG);
-  border: 2px solid var(--PrimaryColor);
-  border-radius: 1rem;
-  padding: 20px 10px;
-  position: sticky;
-  top: 5.5rem;
-  bottom: 1rem;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 10px;
-  height: -moz-max-content;
-  height: max-content;
 }
-.listContainer .listWapper .listSearch .listTitle {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--textColor);
-  margin-bottom: 10px;
-}
-.listContainer .listWapper .listSearch .listSearchItem {
+.listContainer .listWapper .findBooking {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
+}
+.listContainer .listWapper .findBooking .option {
+  display: flex;
+  flex-direction: column;
+}
+.listContainer .listWapper .findBooking .option .active .icon {
+  color: var(--PrimaryColor);
+}
+.listContainer .listWapper .findBooking .option .active p {
+  color: var(--PrimaryColor);
+}
+.listContainer .listWapper .findBooking .detailBooking {
   width: 100%;
-  height: 100%;
-  color: var(--textColor);
+  box-shadow: 0.5px 1px gray;
+  position: relative;
+  margin-bottom: 20px;
 }
-.listContainer .listWapper .listSearch .listSearchItem label {
-  font-size: 18px;
-  font-weight: 500;
+.listContainer .listWapper .findBooking .detailBooking .titleBook {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
 }
-.listContainer .listWapper .listSearch .listSearchItem input {
-  font-weight: 600;
-  padding: 0.5rem;
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .destination {
+  width: 100%;
+  margin: 10px;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .destination .icon {
+  color: var(--SecondaryColor);
+  font-size: 2.5rem;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .destination input {
+  width: 80%;
+  padding: 10px;
   border: none;
   outline: none;
-  background: rgb(192, 239, 241);
-  border-radius: 0.5rem;
-  color: var(--textColor);
+  border-bottom: 1px solid black;
 }
-.listContainer .listWapper .listSearch button {
-  width: 100%;
-  padding: 0.5rem 1rem;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--whiteColorDeam);
-  gap: 2px;
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont {
+  display: flex;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .date {
+  margin: 10px;
+  position: relative;
+  flex: 1;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .date .icon {
+  color: var(--SecondaryColor);
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .date .textDate {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .date .dateInput {
+  position: absolute;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .detailRoom {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .detailRoom .icon {
+  color: var(--SecondaryColor);
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .detailRoom .detail {
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .detailRoom .optionRoom {
+  position: absolute;
+  background-color: white;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  border-radius: 5%;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .detailRoom .optionRoom .optionItem {
+  display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.2rem;
+  padding: 5px;
 }
-.listContainer .listWapper .listSearch button .icon {
-  font-size: 18px;
-  font-weight: 400;
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .detailRoom .optionRoom .optionItem .optionText {
+  flex: 1;
 }
-.listContainer .listWapper .listResult {
-  flex: 3;
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .detailRoom .optionRoom .optionItem .buttonCounter {
+  flex: 1;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont .detailRoom .optionRoom .optionItem .buttonCounter .optionCounterButton {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 25%;
+  background-color: white;
+  font-weight: bold;
+}
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail p {
+  color: var(--SecondaryColor);
+  font-weight: 500;
+  margin: 10px;
+}
+.listContainer .listWapper .findBooking .detailBooking .button {
+  background-color: white;
+  padding: 10px;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.listContainer .listWapper .findBooking .detailBooking .button span {
+  font-weight: 600;
 }
 .listContainer .listWapper .listResult .secContent {
   justify-content: center;
@@ -93,14 +147,13 @@
   row-gap: 10px;
   border-radius: 10px;
   align-items: center;
-  background: var(--cardBG);
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.5);
   overflow: hidden;
   padding: 1rem;
 }
 .listContainer .listWapper .listResult .secContent .singleDestination:hover {
   background: var(--cardHover);
-  box-shadow: 0 2px 4px rgba(85, 85, 114, 0.5);
+  box-shadow: 0 2px 4px var(--PrimaryColor);
   transition: 0.3 ease;
 }
 .listContainer .listWapper .listResult .secContent .singleDestination .imageDiv {

@@ -14,9 +14,6 @@ const Home = () => {
  useEffect(()=>{
   Aos.init({duration: 3000});
  },[])
-
-
-
   return (
          <section className="home">
          <div className="overlay"> </div>

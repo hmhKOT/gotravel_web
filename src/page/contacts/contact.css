@@ -1,1 +1,67 @@
-/*# sourceMappingURL=contact.css.map */
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --gradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgba(239, 239, 239, 0.073);
+  --bodyColor: rgb(240, 240, 245);
+  --cardBG: rgb(225, 225, 235);
+}
+
+.virtual {
+  width: 100%;
+  height: 90px;
+}
+
+.contactContainer {
+  margin: 10px;
+}
+.contactContainer .carousel-inner .carousel-item {
+  width: 100%;
+  height: 500px;
+}
+.contactContainer .collaborate {
+  margin-top: 20px;
+}
+.contactContainer .collaborate .detailItem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.contactContainer .collaborate .detailItem .itemTitle .bigTitle {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.contactContainer .collaborate .detailItem .itemTitle .smallTitle {
+  color: gray;
+}
+.contactContainer .collaborate .detailItem .itemCard {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.contactContainer .collaborate .detailItem .itemCard .card {
+  width: 25%;
+  border: 0.5px solid gray;
+}
+.contactContainer .collaborate .detailItem .itemCard .card .imgCard {
+  overflow: hidden;
+  padding: 2px;
+}
+.contactContainer .collaborate .detailItem .itemCard .card .imgCard img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 2s ease;
+}
+.contactContainer .collaborate .detailItem .itemCard .card:hover img {
+  transform: scale(1.5);
+}
+.contactContainer .imgAboutContact {
+  position: relative;
+  transform: translateX(50);
+  margin: 15px;
+}/*# sourceMappingURL=contact.css.map */

@@ -19,16 +19,19 @@
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(2,15,29,0.204);
+
     .logo{
         color: var(--blackColor);
         font-weight: 800;
         cursor: pointer;
         align-items: center;
         justify-content: center;
+        display: flex;
         .icon{
-            font-size:25px;
+            font-size:50px;
             color: var(--PrimaryColor);
-            transform: translateY(5px);
+            margin-right: 5px;
+           
         }
 
 
@@ -81,6 +84,7 @@
                         color: var(--whiteColorDeam);
                         font-weight:500;
                         font-size: 16px;
+                        text-decoration: none;
                     }
                 }  
 
@@ -149,6 +153,8 @@
                         color: var(--whiteColorDeam);
                         font-weight:500;
                         font-size: 16px;
+                        list-style: none;
+                        text-decoration: none;
                     }
                 }
             }

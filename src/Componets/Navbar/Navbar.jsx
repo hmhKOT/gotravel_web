@@ -45,10 +45,11 @@ const Navbar = () => {
              <li className="navItem">
               <Link  to="/contact" className="navLink">Contacts</Link>
              </li>
+             <Link  to="/login">
              <button className="btn">
               <FaUserCircle className="icon" />
-              <a >Login</a>
-             </button>
+                   <a>Login</a>
+             </button></Link>
 
             </ul>
             <div onClick={removeNav} 

@@ -1,0 +1,179 @@
+$h6-font-family: sans-serif;
+$p-font-family: sans-serif;
+
+.c-heroImageGrid {
+    position: relative;
+    overflow: hidden;
+    height: 50vw;
+    background: #fff;
+    margin-bottom: 60px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .container {
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+        top: -20vw;
+        left: -8vw;
+        transform: rotateZ(45deg);
+        height: 100vw;
+        width: 107vw;
+
+        .column {
+            overflow: hidden;
+            position: relative;
+
+            &:nth-of-type(1) {
+                border-right: 8px solid white;
+                width: 25%;
+                height: 66vw;
+
+                &:hover {
+                    opacity: 0.75;
+                    cursor: pointer;
+                }
+
+                &:before {
+                    position: absolute;
+                    top: 8.4vw;
+                    left: 8.1vw;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    transform: rotateZ(-45deg);
+                    content: "";
+                    width: 40vw;
+                    height: 38vw;
+                    background-image: url(https://www.chudu24.com/wp-content/uploads/2017/03/canh-dep-nhat-ban-15.jpg);
+                }
+            }
+
+            &:nth-of-type(2) {
+                display: flex;
+                flex-direction: column-reverse;
+                width: 75%;
+                height: 109.1vw;
+
+                .row {
+                    border-top: 8px solid #fff;
+
+                    &:nth-of-type(1) {
+                        position: relative;
+                        overflow: hidden;
+                        height: 50vw;
+
+                        &:hover {
+                            opacity: 0.75;
+                            cursor: pointer;
+                        }
+
+                        &:before {
+                            position: absolute;
+                            top: -10.1vw;
+                            left: -14.3vw;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            transform: rotateZ(-45deg);
+                            content: "";
+                            width: 65vw;
+                            height: 39vw;
+                            background-image: url(https://www.chudu24.com/wp-content/uploads/2017/03/canh-dep-nhat-ban-11.jpg);
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        display: flex;
+                        height: 40.5vw;
+
+                        div:nth-of-type(1) {
+                            overflow: hidden;
+                            width: 30%;
+                            background-color: #8B8B8A;
+
+                            .text {
+                                width: 100%;
+                                height: 100%;
+                                overflow: visible;
+                                transform: rotateZ(-45deg);
+                                position: relative;
+                                left: -40px;
+
+                                h6 {
+                                    position: absolute;
+                                    color: #fff;
+                                    text-transform: uppercase;
+                                    font-weight: bold;
+                                    font-size: 1.35vw;
+                                    width: 20vw;
+                                    top: 16vw;
+                                    left: 7vw;
+                                    line-height: 1.55vw;
+                                }
+
+                                p {
+                                    text-align: right;
+                                    position: absolute;
+                                    color: #fff;
+                                    font-size: 0.9vw;
+                                    width: 18vw;
+                                    top: 23.5vw;
+                                    left: -3.5vw;
+                                }
+                            }
+                        }
+
+                        div:nth-of-type(2) {
+                            position: relative;
+                            width: 70%;
+                            border-left: 8px solid white;
+                            overflow: hidden;
+
+                            &:hover {
+                                opacity: 0.75;
+                                cursor: pointer;
+                            }
+
+                            &:before {
+                                position: absolute;
+                                top: 0;
+                                left: -40vw;
+                                width: 110.1vw;
+                                height: 110vw;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                transform: rotateZ(-45deg);
+                                content: "";
+                                background-image: url(https://www.chudu24.com/wp-content/uploads/2017/03/canh-dep-nhat-ban-6.jpg);
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        position: relative;
+                        height: 18.6vw;
+                        overflow: hidden;
+
+                        &:hover {
+                            opacity: 0.75;
+                            cursor: pointer;
+                        }
+
+                        &:before {
+                            position: absolute;
+                            top: 7.5vw;
+                            left: 25vw;
+                            width: 33vw;
+                            height: 27vw;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            transform: rotateZ(-45deg);
+                            content: "";
+                            background-image: url(https://www.chudu24.com/wp-content/uploads/2017/03/canh-dep-nhat-ban-5.jpg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
