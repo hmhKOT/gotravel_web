@@ -374,11 +374,11 @@
 }
 .listContainer .listWapper .listResult .secContent .singleDestination .cardInfo .fees .grade {
   color: var(--textColor);
-  max-width: 100px;
   line-height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 300px;
 }
 .listContainer .listWapper .listResult .secContent .singleDestination .cardInfo .fees .grade small {
   text-align: center;

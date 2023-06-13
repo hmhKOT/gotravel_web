@@ -13,7 +13,7 @@ import { BsCalendarDate } from "react-icons/bs";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";
 import { BsArrowCounterclockwise } from "react-icons/bs";
-import {FcCheckmark} from "react-icons/fc";
+import { FcCheckmark } from "react-icons/fc";
 import img1 from "../../Assets/img(1).jpg";
 import img2 from "../../Assets/img(2).jpg";
 import img3 from "../../Assets/img(3).jpg";
@@ -36,7 +36,8 @@ const List = (props) => {
   useEffect(() => {
     Aos.init({ duration: 3000 });
   }, []);
-
+  const [hotelName,setHotel] = useState('');
+  console.log(hotelName);
   const Data = [
     {
       id: 1,
@@ -45,6 +46,157 @@ const List = (props) => {
       location: "France",
       grade: 4.5,
       fees: "$100",
+      properties: [
+        {
+          id: 1,
+          location_id: 1,
+          name: "Eiffel Tower",
+          image:
+            "https://images.pexels.com/photos/7630190/pexels-photo-7630190.jpeg?auto=compress&cs=tinysrgb&w=800",
+          rating: "4.9",
+          address:
+            "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
+          oldPrice: 100,
+          newPrice: 80,
+          latitude: "48.85822200",
+          longitude: "2.29450000",
+          photos: [
+            {
+              id: 1,
+              property_id: 1,
+              image:
+                "https://travel.usnews.com/dims4/USNEWS/562f443/2147483647/resize/600x400%5E%3E/crop/600x400/quality/85/?url=https://travel.usnews.com/images/Four_Seasons_Paris_usn_2.jpg",
+            },
+            {
+              id: 2,
+              property_id: 1,
+              image:
+                "https://landedtravel.com/wp-content/uploads/2021/03/suite2-scaled.jpg",
+            },
+            {
+              id: 3,
+              property_id: 1,
+              image:
+                "https://cdn.kiwicollection.com/media/room_images/PR000200/xl/000200-penthouse-city-view-suite-belmond-copacabana-palace.jpg",
+            },
+            {
+              id: 4,
+              property_id: 1,
+              image:
+                "https://toursgonewild.com/wp-content/uploads/2020/07/Belmond-Copacabana-Palace11.jpg",
+            },
+            {
+              id: 5,
+              property_id: 1,
+              image:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg_yE64Tom3TtRxQ-hhhQ3MFeOML7sPCeumg&usqp=CAU",
+            },
+          ],
+          rooms: [
+            {
+              id: 202,
+              name: "King Room with Balcony",
+              size: 419,
+              refundable: "refundable",
+              payment: "Pay at the property",
+              bed: "1 queen bed",
+              property_id: 1,
+            },
+            {
+              id: 203,
+              name: "Deluxe king Room",
+              size: 440,
+              refundable: "non refundable",
+              payment: "Pay in advance",
+              bed: "1 queen bed",
+              property_id: 1,
+            },
+            {
+              id: 205,
+              name: "Two bedroom with balcony",
+              size: 490,
+              refundable: "refundable",
+              payment: "Pay at the property",
+              bed: "1 queen bed",
+              property_id: 1,
+            },
+          ],
+        },
+        {
+          id: 2,
+          location_id: 1,
+          name: "The Louvre",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6Uz6Oz7k68EKzubDWeMUlMxD6akFxC3_EmtfGeEiuzyjevwdwAz1GcynJTZQ1H7jenPQ&usqp=CAU",
+          rating: "4.8",
+          address: "Rue de Rivoli, 75001 Paris, France",
+          oldPrice: 50,
+          newPrice: 40,
+          latitude: "48.86061100",
+          longitude: "2.33764400",
+          photos: [
+            {
+              id: 6,
+              property_id: 2,
+              image:
+                "https://toursgonewild.com/wp-content/uploads/2020/07/Belmond-Copacabana-Palace11.jpg\r\n",
+            },
+            {
+              id: 7,
+              property_id: 2,
+              image:
+                "https://landedtravel.com/wp-content/uploads/2021/03/suite2-scaled.jpg\r\n\r\n",
+            },
+            {
+              id: 8,
+              property_id: 2,
+              image:
+                "https://travel.usnews.com/dims4/USNEWS/562f443/2147483647/resize/600x400%5E%3E/crop/600x400/quality/85/?url=https://travel.usnews.com/images/Four_Seasons_Paris_usn_2.jpg\r\n",
+            },
+            {
+              id: 9,
+              property_id: 2,
+              image:
+                "https://prestigiousvenues.com/wp-content/uploads/2019/02/Corporate-Incentive-Venue-Event-The-Langham-Sydney-Prestigious-Venues.jpg\r\n\r\n",
+            },
+            {
+              id: 10,
+              property_id: 2,
+              image:
+                "https://www.firstclass.com.au/wp-content/uploads/2016/06/langham-sydney-room-3x1.jpg",
+            },
+          ],
+          rooms: [
+            {
+              id: 206,
+              name: "Suite with Eiffel Tower View",
+              size: 550,
+              refundable: "refundable",
+              payment: "Pay at the property",
+              bed: "1 king bed",
+              property_id: 2,
+            },
+            {
+              id: 207,
+              name: "Deluxe Double Room",
+              size: 420,
+              refundable: "refundable",
+              payment: "Pay in advance",
+              bed: "2 double beds",
+              property_id: 2,
+            },
+            {
+              id: 208,
+              name: "One-Bedroom Apartment",
+              size: 600,
+              refundable: "non refundable",
+              payment: "Pay at the property",
+              bed: "1 king bed",
+              property_id: 2,
+            },
+          ],
+        },
+      ],
       description:
         "The Eiffel Tower, the Louvre Museum, and Notre-Dame Cathedral are just a few of the many iconic landmarks that draw millions of visitors to Paris each year.",
     },
@@ -172,14 +324,13 @@ const List = (props) => {
   const handleDateFlight = (event) => {
     setDateFlight(event.target.value);
   };
-    // For Booking car Rental;
-    const [carName,setCarName] = useState();
-    const handleCarName = (event) => {
-      setCarName(event.target.value);
-      
-    }
-    const [autoDriver,setAutoDriver] = useState(true);
-   const [seats,setSeats] = useState(4);
+  // For Booking car Rental;
+  const [carName, setCarName] = useState();
+  const handleCarName = (event) => {
+    setCarName(event.target.value);
+  };
+  const [autoDriver, setAutoDriver] = useState(true);
+  const [seats, setSeats] = useState(4);
 
   const [openResultHotels, setopenResultHotelsHotels] = useState(false);
 
@@ -335,7 +486,7 @@ const List = (props) => {
                 <div className="planeDetail">
                   <div className="flightPlace">
                     <div className="Place">
-                    <label>To:</label>
+                      <label>To:</label>
                       <input
                         type="text"
                         value={flightStart}
@@ -347,7 +498,7 @@ const List = (props) => {
                       <BsArrowCounterclockwise className="icon" />
                     </button>
                     <div className="Place">
-                    <label>From:</label>
+                      <label>From:</label>
                       <input
                         type="text"
                         value={flightEnd}
@@ -365,10 +516,9 @@ const List = (props) => {
                       <option value="1">Economy class</option>
                       <option value="2">Business class</option>
                       <option value="3">First class</option>
-
                     </select>
                   </div>
-                
+
                   <div className="detailPlane">
                     <MdOutlineFamilyRestroom className="icon" />
                     <span
@@ -446,7 +596,7 @@ const List = (props) => {
                     )}
                   </div>
                   <div className="dateFlight">
-                  <BsCalendarDate className="icon"/>
+                    <BsCalendarDate className="icon" />
                     <input
                       type="date"
                       className="DateFlight"
@@ -454,24 +604,27 @@ const List = (props) => {
                       onChange={handleDateFlight}
                     />
                   </div>
-                 
+
                   <div className="btnFlight">
-                    <FiSearch className="icon"/>
+                    <FiSearch className="icon" />
                     <span>Search</span>
                   </div>
                 </div>
               )}
-              {activeIndex === 2 && 
-              <div className="carDetail">
-                <div className="Cartilte">
-                  <label>Name : </label>
-                   <input type="text"  onChange={handleCarName}
-                   value={carName} placeholder="Enter your car name" />
-                 
-                </div>
-                 <div className="dateRental">
-                 <div className="date Car">
-                    <label >Date :</label>
+              {activeIndex === 2 && (
+                <div className="carDetail">
+                  <div className="Cartilte">
+                    <label>Name : </label>
+                    <input
+                      type="text"
+                      onChange={handleCarName}
+                      value={carName}
+                      placeholder="Enter your car name"
+                    />
+                  </div>
+                  <div className="dateRental">
+                    <div className="date Car">
+                      <label>Date :</label>
                       <span
                         onClick={() => setOpenDate(!openDate)}
                         className="textDate"
@@ -489,26 +642,43 @@ const List = (props) => {
                         />
                       )}
                     </div>
-                 </div>
-                 <div className="seatsConuter">
-                 <label > Number of Seats :</label>
-                     <div className="btnCoun" onClick={() => setSeats(seats+1)  } >+</div>
-                     <div className="seatNu">{seats}</div>
-                     <div className="btnCoun" onClick={() => setSeats(Math.max(4,seats-1))} >-</div>
-                 </div>
-                 <div className="autoDriver">
-                  <h6 onClick={() =>setAutoDriver(true)}>Self-driving
-                  <FcCheckmark 
-                  className={` ${autoDriver === false ? "icon" : ""}`}/></h6>
-                  <h6 onClick={() =>setAutoDriver(false)}>have a driver <FcCheckmark className={` ${autoDriver === true ? "icon" : ""}`}/></h6>
-                 </div>
-                     <div className="searchCar">
-                      <FiSearch  className="icon"/>
-                      <span>Search</span>
-                     </div>  
-
-              </div>
-              }
+                  </div>
+                  <div className="seatsConuter">
+                    <label> Number of Seats :</label>
+                    <div
+                      className="btnCoun"
+                      onClick={() => setSeats(seats + 1)}
+                    >
+                      +
+                    </div>
+                    <div className="seatNu">{seats}</div>
+                    <div
+                      className="btnCoun"
+                      onClick={() => setSeats(Math.max(4, seats - 1))}
+                    >
+                      -
+                    </div>
+                  </div>
+                  <div className="autoDriver">
+                    <h6 onClick={() => setAutoDriver(true)}>
+                      Self-driving
+                      <FcCheckmark
+                        className={` ${autoDriver === false ? "icon" : ""}`}
+                      />
+                    </h6>
+                    <h6 onClick={() => setAutoDriver(false)}>
+                      have a driver{" "}
+                      <FcCheckmark
+                        className={` ${autoDriver === true ? "icon" : ""}`}
+                      />
+                    </h6>
+                  </div>
+                  <div className="searchCar">
+                    <FiSearch className="icon" />
+                    <span>Search</span>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div>
@@ -518,7 +688,7 @@ const List = (props) => {
             <div className="secContent grid">
               {openResultHotels &&
                 Data.map(
-                  ({ id, img, name, location, grade, fees, description }) => {
+                  ({ id, img, name, location, grade, fees, description,properties }) => {
                     if (name.toLowerCase() === destination.toLowerCase()) {
                       return (
                         <div key={id} className="singleDestination">
@@ -533,13 +703,24 @@ const List = (props) => {
                             </span>
                             <div className="fees flex">
                               <div className="grade">
-                                <span>
-                                  {grade}
-                                  <small>+1</small>
-                                </span>
+                                <select
+                                  class="form-select form-select-sm"
+                                  aria-label=".form-select-sm example"
+                                  onChange={(event) => setHotel(event.target.value)}
+                                >
+                                 {properties.map((property) => (
+    <option key={property.id} value={property.name}>
+      {property.name}
+    </option>
+  ))}
+                                 
+                                 
+                                </select>
                               </div>
                               <div className="price">
-                                <h5>{fees}</h5>
+                                <h5>${
+                                  properties.find((prop) => prop.name === hotelName).newPrice
+                                }</h5>
                               </div>
                             </div>
                             <div className="desc">

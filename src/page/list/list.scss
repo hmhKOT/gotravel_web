@@ -409,11 +409,12 @@
                             border-bottom:1.5px solid var(--greyText);
                             .grade{
                                 color: var(--textColor);
-                                max-width: 100px;
+                              
                                 line-height:20px;
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
+                                width: 300px ;
                                 small{
                                     text-align: center;
                                     background: var(--gradientColor);
