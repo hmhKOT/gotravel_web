@@ -15,6 +15,7 @@
   position: relative;
   padding: 6.5rem 2rem 2rem;
   top: 0.2rem;
+  margin-bottom: 10rem;
 }
 .listContainer .listWapper {
   width: 100%;
@@ -126,7 +127,7 @@
   font-weight: 500;
   margin: 10px;
 }
-.listContainer .listWapper .findBooking .detailBooking .button {
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .button {
   background-color: white;
   padding: 10px;
   position: absolute;
@@ -134,8 +135,181 @@
   top: 50%;
   transform: translateY(-50%);
 }
-.listContainer .listWapper .findBooking .detailBooking .button span {
+.listContainer .listWapper .findBooking .detailBooking .hotelDetail .button span {
   font-weight: 600;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+  margin-left: 10px;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .flightPlace {
+  display: flex;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .flightPlace .Place {
+  margin: 10px;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .flightPlace .Place input {
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .flightPlace button {
+  color: var(--SecondaryColor);
+  background-color: white;
+  padding: 0 10px 0;
+  border-radius: 50%;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .selectType {
+  width: 30%;
+  position: absolute;
+  right: 20rem;
+  top: 10px;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .detailPlane {
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .detailPlane .icon {
+  color: var(--SecondaryColor);
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .detailPlane .detail {
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .detailPlane .optionRoom {
+  position: absolute;
+  background-color: white;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  border-radius: 5%;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .detailPlane .optionRoom .optionItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .detailPlane .optionRoom .optionItem .optionText {
+  flex: 1;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .detailPlane .optionRoom .optionItem .buttonCounter {
+  flex: 1;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .detailPlane .optionRoom .optionItem .buttonCounter .optionCounterButton {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 25%;
+  background-color: white;
+  font-weight: bold;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .dateFlight {
+  position: absolute;
+  top: 4rem;
+  left: 20rem;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .dateFlight input {
+  padding: 5px;
+  margin-left: 5px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .dateFlight .icon {
+  color: var(--SecondaryColor);
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .btnFlight {
+  cursor: pointer;
+  border: 1px solid black;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 5px 10px 5px;
+  position: absolute;
+  bottom: -3.5rem;
+  right: 25rem;
+}
+.listContainer .listWapper .findBooking .detailBooking .planeDetail .btnFlight .icon {
+  color: var(--SecondaryColor);
+  font-weight: 500;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail {
+  margin-left: 10px;
+  position: relative;
+  display: grid;
+  gap: 10px;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .Cartilte label {
+  font-size: 18px;
+  font-weight: 500;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .Cartilte input {
+  padding: 5px 10px 5px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .dateRental {
+  position: relative;
+  cursor: pointer;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .dateRental .date label {
+  font-size: 18px;
+  font-weight: 600;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .dateRental .date .dateInput {
+  position: absolute;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .seatsConuter {
+  display: flex;
+  align-items: center;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .seatsConuter label {
+  font-size: 18px;
+  font-weight: 600;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .seatsConuter .btnCoun {
+  border: 1px solid black;
+  padding: 0 5px 0;
+  margin: 10px;
+  cursor: pointer;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .autoDriver {
+  position: absolute;
+  left: 20rem;
+  top: 0.5rem;
+  cursor: pointer;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .autoDriver h6 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .autoDriver h6 .icon {
+  display: none;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .searchCar {
+  border: 1px solid black;
+  width: -moz-max-content;
+  width: max-content;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.listContainer .listWapper .findBooking .detailBooking .carDetail .searchCar .icon {
+  color: var(--SecondaryColor);
+}
+@media (max-width: 768px) {
+  .listContainer .listWapper .findBooking .detailBooking .hotelDetail .detailCont {
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+  }
+  .listContainer .listWapper .findBooking .detailBooking .hotelDetail .button {
+    position: relative;
+    top: 1.5rem;
+    left: 5rem;
+  }
 }
 .listContainer .listWapper .listResult .secContent {
   justify-content: center;

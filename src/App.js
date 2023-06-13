@@ -9,13 +9,12 @@ import Download from './page/downapp/Down'
 import Contact from './page/contacts/Contact';
 import Login from './page/Login/Login';
 import Register from './page/Login/Register';
-import { Provider } from "react-redux";
-import store from './page/store'
+
 
 const App = () => {
  
   return (
-    <Provider store={store}>
+   
      <BrowserRouter>
      <Routes>
       <Route path="/" element={<Myhome/>} />  
@@ -29,7 +28,7 @@ const App = () => {
      </Routes>
    
    </BrowserRouter>
-  </Provider>
+
  
   )
 }

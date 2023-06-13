@@ -4,7 +4,8 @@ import Home from '../../Componets/Home/Home'
 import Main from '../../Componets/Main/Main'
 import Footer from '../../Componets/Footer/Footer'
 
-const Myhome = () => {
+const Myhome = (props) => {
+
   return (
     <>
      <Navbar/>

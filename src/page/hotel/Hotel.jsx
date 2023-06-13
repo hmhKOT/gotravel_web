@@ -5,12 +5,13 @@ import Footer from "../../Componets/Footer/Footer";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { BsCart4 } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
-
+import { useSelector } from "react-redux";
+import { format, set } from "date-fns";
 const Hotel = (props) => {
   const data = {
     name: "Grand Hotel",
     address: "Elton St 125 new Yord",
-    price: "$500",
+    price: 500,
     des: "Welcome to the Golden Sands Hotel, located in the heart of downtown Miami. Our luxury hotel offers 300 stylishly appointed guest rooms and suites, each with stunning views of the city skyline or Biscayne Bay.Our signature amenities include a rooftop pool and bar, a full-service spa, and a 24-hour fitness center. Our on-site restaurant, the Golden Grill, serves contemporary American cuisine in a sophisticated setting.",
     photos : [
       {
@@ -33,11 +34,9 @@ const Hotel = (props) => {
       },
     ]
   };
+ const location = useLocation();
  
-  const location = useLocation();
-  const state = location.state;
-
-  console.log(state); 
+   
 
   return (
     <>
@@ -76,13 +75,12 @@ const Hotel = (props) => {
               </p>
             </div>
             <div className="hotelDetailsPrice">
-              <h1>Perfect for a 9-night day</h1>
-              <span>
-                Located in the real heart of Krakow, this property has an
-                excellent location scose of 9.8;
-              </span>
+              <h1>Detail</h1>
+              <span>Date :   {`${format(location.state.date[0].startDate, "MM/dd/yy")}`}_to_
+                    {`${format(location.state.date[0].endDate, "MM/dd/yy")}`}</span>
+                    <span>Adult : {location.state.options.adult} - Children : {location.state.options.children}</span>
               <h2>
-                <b>$3475</b> <p>(9 ngiht)</p>
+                <b>{data.price*location.state.options.room}</b> <p>(9 ngiht)</p>
               </h2>
               <button className="btn">
                 <BsCart4 className="icon" />

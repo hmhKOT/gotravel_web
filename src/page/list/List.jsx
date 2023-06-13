@@ -11,7 +11,9 @@ import { AiFillCar } from "react-icons/ai";
 import { MdShareLocation } from "react-icons/md";
 import { BsCalendarDate } from "react-icons/bs";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
-import {FiSearch} from "react-icons/fi"
+import { FiSearch } from "react-icons/fi";
+import { BsArrowCounterclockwise } from "react-icons/bs";
+import {FcCheckmark} from "react-icons/fc";
 import img1 from "../../Assets/img(1).jpg";
 import img2 from "../../Assets/img(2).jpg";
 import img3 from "../../Assets/img(3).jpg";
@@ -30,7 +32,7 @@ import { DateRange } from "react-date-range";
 import { format, set } from "date-fns";
 import { Link } from "react-router-dom";
 
-const List = () => {
+const List = (props) => {
   useEffect(() => {
     Aos.init({ duration: 3000 });
   }, []);
@@ -39,7 +41,7 @@ const List = () => {
     {
       id: 1,
       img: img1,
-      destTitle: "Paris",
+      name: "Paris",
       location: "France",
       grade: 4.5,
       fees: "$100",
@@ -49,7 +51,7 @@ const List = () => {
     {
       id: 2,
       img: img2,
-      destTitle: "New York City",
+      name: "New York City",
       location: "United States",
       grade: 4.8,
       fees: "$150",
@@ -59,7 +61,7 @@ const List = () => {
     {
       id: 3,
       img: img3,
-      destTitle: "Tokyo",
+      name: "Tokyo",
       location: "Japan",
       grade: 4.6,
       fees: "$120",
@@ -69,7 +71,7 @@ const List = () => {
     {
       id: 4,
       img: img4,
-      destTitle: "Rio de Janeiro",
+      name: "Rio de Janeiro",
       location: "Brazil",
       grade: 4.7,
       fees: "$110",
@@ -79,7 +81,7 @@ const List = () => {
     {
       id: 5,
       img: img5,
-      destTitle: "Barcelona",
+      name: "Barcelona",
       location: "Spain",
       grade: 4.4,
       fees: "$90",
@@ -89,7 +91,7 @@ const List = () => {
     {
       id: 6,
       img: img6,
-      destTitle: "Sydney",
+      name: "Sydney",
       location: "Australia",
       grade: 4.9,
       fees: "$180",
@@ -99,7 +101,7 @@ const List = () => {
     {
       id: 7,
       img: img7,
-      destTitle: "Bali",
+      name: "Bali",
       location: "Indonesia",
       grade: 4.5,
       fees: "$80",
@@ -109,7 +111,7 @@ const List = () => {
     {
       id: 8,
       img: img8,
-      destTitle: "Dubai",
+      name: "Dubai",
       location: "United Arab Emirates",
       grade: 4.7,
       fees: "$200",
@@ -119,7 +121,7 @@ const List = () => {
     {
       id: 9,
       img: img9,
-      destTitle: "Cape Town",
+      name: "Cape Town",
       location: "South Africa",
       grade: 4.6,
       fees: "$130",
@@ -141,25 +143,45 @@ const List = () => {
     children: 0,
     room: 1,
   });
-  const handleOption = (name,operation) => {
-    setOptions((prev)=>{
+  const handleOption = (name, operation) => {
+    setOptions((prev) => {
       return {
         ...prev,
-        [name]: operation === "i" ? options[name] +1 : options[name] -1
-      }
-    })
-  }
+        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
+      };
+    });
+  };
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleOptionTitleClick = (index) => {
     setActiveIndex(index);
-    
   };
-  const [destination,setDestination] = useState("");
+  const [destination, setDestination] = useState("");
   const handleDestination = (event) => {
     setDestination(event.target.value);
-  }
+  };
+  // For Flight booking
+  const [flightStart, setFlightStart] = useState();
+  const [flightEnd, setFlightEnd] = useState();
+  const reservePlace = () => {
+    let t = flightStart;
+    setFlightStart(flightEnd);
+    setFlightEnd(t);
+  };
+  const [dateFlight, setDateFlight] = useState();
+  const handleDateFlight = (event) => {
+    setDateFlight(event.target.value);
+  };
+    // For Booking car Rental;
+    const [carName,setCarName] = useState();
+    const handleCarName = (event) => {
+      setCarName(event.target.value);
+      
+    }
+    const [autoDriver,setAutoDriver] = useState(true);
+   const [seats,setSeats] = useState(4);
 
+  const [openResultHotels, setopenResultHotelsHotels] = useState(false);
 
   return (
     <>
@@ -168,93 +190,325 @@ const List = () => {
         <div className="listWapper ">
           <div className="findBooking">
             <div className="option">
-              <div    className={`optionTitle ${activeIndex === 0 ? "active" : ""}`}
-        onClick={() => handleOptionTitleClick(0)} >
+              <div
+                className={`optionTitle ${activeIndex === 0 ? "active" : ""}`}
+                onClick={() => handleOptionTitleClick(0)}
+              >
                 <FaHotel className="icon" />
                 <p>Hotel</p>
               </div>
-              <div className={`optionTitle ${activeIndex === 1 ? "active" : ""}`}
-        onClick={() => handleOptionTitleClick(1)}>
+              <div
+                className={`optionTitle ${activeIndex === 1 ? "active" : ""}`}
+                onClick={() => handleOptionTitleClick(1)}
+              >
                 <MdOutlineAirplaneTicket className="icon" />
                 <p>Plane</p>
               </div>
-              <div className={`optionTitle ${activeIndex === 2 ? "active" : ""}`}
-        onClick={() => handleOptionTitleClick(2)}>
+              <div
+                className={`optionTitle ${activeIndex === 2 ? "active" : ""}`}
+                onClick={() => handleOptionTitleClick(2)}
+              >
                 <AiFillCar className="icon" />
                 <p>Car</p>
               </div>
             </div>
             <div className="detailBooking">
-            <div className="titleBook">Booking Now !</div>
-              <div className="hotelDetail">
-                <div className="destination">
-                  <MdShareLocation className="icon" />
-                  <input type="text" onChange={handleDestination} placeholder="Enter your destination ..." />
-                </div>
-              <div className="detailCont">
-              <div className="date">
-                  <BsCalendarDate className="icon" />
-                  <span
-                    onClick={() => setOpenDate(!openDate)}
-                    className="textDate"
-                  >
-                    {`${format(date[0].startDate, "MM/dd/yy")}`}_to_
-                    {`${format(date[0].endDate, "MM/dd/yy")}`}
-                  </span>
-                  {openDate && (
-                    <DateRange
-                      editableDateInputs={true}
-                      onChange={(item) => setDate([item.selection])}
-                      moveRangeOnFirstSelection={false}
-                      ranges={date}
-                      className="dateInput"
+              <div className="titleBook">Booking Now !</div>
+              {activeIndex === 0 && (
+                <div className="hotelDetail">
+                  <div className="destination">
+                    <MdShareLocation className="icon" />
+                    <input
+                      type="text"
+                      onChange={handleDestination}
+                      placeholder="Enter your destination ..."
                     />
-                  )}
+                  </div>
+                  <div className="detailCont">
+                    <div className="date">
+                      <BsCalendarDate className="icon" />
+                      <span
+                        onClick={() => setOpenDate(!openDate)}
+                        className="textDate"
+                      >
+                        {`${format(date[0].startDate, "MM/dd/yy")}`}_to_
+                        {`${format(date[0].endDate, "MM/dd/yy")}`}
+                      </span>
+                      {openDate && (
+                        <DateRange
+                          editableDateInputs={true}
+                          onChange={(item) => setDate([item.selection])}
+                          moveRangeOnFirstSelection={false}
+                          ranges={date}
+                          className="dateInput"
+                        />
+                      )}
+                    </div>
+                    <div className="detailRoom">
+                      <MdOutlineFamilyRestroom className="icon" />
+                      <span
+                        className="detail"
+                        onClick={() => setOpenOption(!openOption)}
+                      >
+                        {`${options.adult} adult - ${options.children} children - ${options.room} room`}
+                      </span>
+                      {openOption && (
+                        <div className="optionRoom">
+                          <div className="optionItem">
+                            <div className="optionText">Adult :</div>
+                            <div className="buttonCounter">
+                              <button
+                                disabled={options.adult <= 1}
+                                className="optionCounterButton"
+                                onClick={() => handleOption("adult", "d")}
+                              >
+                                -
+                              </button>
+                              <span className="optionCounterNumber">
+                                {options.adult}
+                              </span>
+                              <button
+                                className="optionCounterButton"
+                                onClick={() => handleOption("adult", "i")}
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+                          <div className="optionItem">
+                            <div className="optionText">Children :</div>
+                            <div className="buttonCounter">
+                              <button
+                                disabled={options.children <= 0}
+                                className="optionCounterButton"
+                                onClick={() => handleOption("children", "d")}
+                              >
+                                -
+                              </button>
+                              <span className="optionCounterNumber">
+                                {options.children}
+                              </span>
+                              <button
+                                className="optionCounterButton"
+                                onClick={() => handleOption("children", "i")}
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+                          <div className="optionItem">
+                            <div className="optionText">Rooms :</div>
+                            <div className="buttonCounter">
+                              <button
+                                disabled={options.room <= 1}
+                                className="optionCounterButton"
+                                onClick={() => handleOption("room", "d")}
+                              >
+                                -
+                              </button>
+                              <span className="optionCounterNumber">
+                                {options.room}
+                              </span>
+                              <button
+                                className="optionCounterButton"
+                                onClick={() => handleOption("room", "i")}
+                              >
+                                +
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  <p>!Book early to get discount!</p>
+                  <button
+                    className="button"
+                    onClick={() => setopenResultHotelsHotels(!openResultHotels)}
+                  >
+                    <FiSearch className="icon" />
+                    <span>Search</span>
+                  </button>
                 </div>
-                <div className="detailRoom">
-                  <MdOutlineFamilyRestroom className="icon" />
-                  <span className="detail" onClick={() => setOpenOption(!openOption)}>
-                    {`${options.adult} adult - ${options.children} children - ${options.room} room`}
-                  </span>
-                  {openOption && <div className="optionRoom">
-                    <div className="optionItem">
-                      <div className="optionText">Adult :</div>
-                       <div className="buttonCounter">
-                       <button disabled = {options.adult <=1}
-                       className="optionCounterButton" onClick={()=>handleOption("adult","d")}>-</button>
-                      <span className="optionCounterNumber">{options.adult}</span>
-                      <button className="optionCounterButton" onClick={()=>handleOption("adult","i")}>+</button>
-                       </div>
+              )}
+              {activeIndex === 1 && (
+                <div className="planeDetail">
+                  <div className="flightPlace">
+                    <div className="Place">
+                    <label>To:</label>
+                      <input
+                        type="text"
+                        value={flightStart}
+                        onChange={(event) => setFlightStart(event.target.value)}
+                        placeholder="Enter your place ...."
+                      />
                     </div>
-                    <div className="optionItem">
-                      <div className="optionText">Children :</div>
-                      <div className="buttonCounter">
-                       <button disabled = {options.children <=0}
-                       className="optionCounterButton" onClick={()=>handleOption("children","d")}>-</button>
-                      <span className="optionCounterNumber">{options.children}</span>
-                      <button className="optionCounterButton" onClick={()=>handleOption("children","i")}>+</button>
-                       </div>
+                    <button onClick={() => reservePlace()}>
+                      <BsArrowCounterclockwise className="icon" />
+                    </button>
+                    <div className="Place">
+                    <label>From:</label>
+                      <input
+                        type="text"
+                        value={flightEnd}
+                        onChange={(event) => setFlightEnd(event.target.value)}
+                        placeholder="Enter your place ...."
+                      />
                     </div>
-                    <div className="optionItem">
-                      <div className="optionText">Rooms :</div>
-                      <div className="buttonCounter">
-                       <button disabled = {options.room <=1}
-                       className="optionCounterButton" onClick={()=>handleOption("room","d")}>-</button>
-                      <span className="optionCounterNumber">{options.room}</span>
-                      <button className="optionCounterButton" onClick={()=>handleOption("room","i")}>+</button>
-                       </div>
-                    </div>
-                  </div>}
+                  </div>
+                  <div className="selectType">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Open this select menu</option>
+                      <option value="1">Economy class</option>
+                      <option value="2">Business class</option>
+                      <option value="3">First class</option>
+
+                    </select>
+                  </div>
+                
+                  <div className="detailPlane">
+                    <MdOutlineFamilyRestroom className="icon" />
+                    <span
+                      className="detail"
+                      onClick={() => setOpenOption(!openOption)}
+                    >
+                      {`${options.adult} adult - ${options.children} children - ${options.room} Baby`}
+                    </span>
+                    {openOption && (
+                      <div className="optionRoom">
+                        <div className="optionItem">
+                          <div className="optionText">Adult :</div>
+                          <div className="buttonCounter">
+                            <button
+                              disabled={options.adult <= 1}
+                              className="optionCounterButton"
+                              onClick={() => handleOption("adult", "d")}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.adult}
+                            </span>
+                            <button
+                              className="optionCounterButton"
+                              onClick={() => handleOption("adult", "i")}
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                        <div className="optionItem">
+                          <div className="optionText">Children :</div>
+                          <div className="buttonCounter">
+                            <button
+                              disabled={options.children <= 0}
+                              className="optionCounterButton"
+                              onClick={() => handleOption("children", "d")}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.children}
+                            </span>
+                            <button
+                              className="optionCounterButton"
+                              onClick={() => handleOption("children", "i")}
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                        <div className="optionItem">
+                          <div className="optionText">Bayby :</div>
+                          <div className="buttonCounter">
+                            <button
+                              disabled={options.room <= 0}
+                              className="optionCounterButton"
+                              onClick={() => handleOption("room", "d")}
+                            >
+                              -
+                            </button>
+                            <span className="optionCounterNumber">
+                              {options.room}
+                            </span>
+                            <button
+                              className="optionCounterButton"
+                              onClick={() => handleOption("room", "i")}
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="dateFlight">
+                  <BsCalendarDate className="icon"/>
+                    <input
+                      type="date"
+                      className="DateFlight"
+                      value={dateFlight}
+                      onChange={handleDateFlight}
+                    />
+                  </div>
+                 
+                  <div className="btnFlight">
+                    <FiSearch className="icon"/>
+                    <span>Search</span>
+                  </div>
                 </div>
+              )}
+              {activeIndex === 2 && 
+              <div className="carDetail">
+                <div className="Cartilte">
+                  <label>Name : </label>
+                   <input type="text"  onChange={handleCarName}
+                   value={carName} placeholder="Enter your car name" />
+                 
+                </div>
+                 <div className="dateRental">
+                 <div className="date Car">
+                    <label >Date :</label>
+                      <span
+                        onClick={() => setOpenDate(!openDate)}
+                        className="textDate"
+                      >
+                        {`${format(date[0].startDate, "MM/dd/yy")}`}_to_
+                        {`${format(date[0].endDate, "MM/dd/yy")}`}
+                      </span>
+                      {openDate && (
+                        <DateRange
+                          editableDateInputs={true}
+                          onChange={(item) => setDate([item.selection])}
+                          moveRangeOnFirstSelection={false}
+                          ranges={date}
+                          className="dateInput"
+                        />
+                      )}
+                    </div>
+                 </div>
+                 <div className="seatsConuter">
+                 <label > Number of Seats :</label>
+                     <div className="btnCoun" onClick={() => setSeats(seats+1)  } >+</div>
+                     <div className="seatNu">{seats}</div>
+                     <div className="btnCoun" onClick={() => setSeats(Math.max(4,seats-1))} >-</div>
+                 </div>
+                 <div className="autoDriver">
+                  <h6 onClick={() =>setAutoDriver(true)}>Self-driving
+                  <FcCheckmark 
+                  className={` ${autoDriver === false ? "icon" : ""}`}/></h6>
+                  <h6 onClick={() =>setAutoDriver(false)}>have a driver <FcCheckmark className={` ${autoDriver === true ? "icon" : ""}`}/></h6>
+                 </div>
+                     <div className="searchCar">
+                      <FiSearch  className="icon"/>
+                      <span>Search</span>
+                     </div>  
+
               </div>
-                <p>!Book early to get discount!</p>
-              </div>
-             
-              <button className="button">
-                <FiSearch className="icon"/>
-                <span>Search</span>
-              </button>
-             
+              }
             </div>
           </div>
           <div>
@@ -262,52 +516,52 @@ const List = () => {
           </div>
           <div className="listResult">
             <div className="secContent grid">
-              {Data.map(
-                ({
-                  id,
-                  img,
-                  destTitle,
-                  location,
-                  grade,
-                  fees,
-                  description,
-                }) => {
-                  return (
-                    <div key={id} className="singleDestination">
-                      <div className="imageDiv">
-                        <img src={img} alt={destTitle} />
-                      </div>
-                      <div className="cardInfo">
-                        <h4 className="destTitle">{destTitle}</h4>
-                        <span className="continent  flex">
-                          <HiOutlineLocationMarker className="icon" />
-                          <span className="name">{location}</span>
-                        </span>
-                        <div className="fees flex">
-                          <div className="grade">
-                            <span>
-                              {grade}
-                              <small>+1</small>
+              {openResultHotels &&
+                Data.map(
+                  ({ id, img, name, location, grade, fees, description }) => {
+                    if (name.toLowerCase() === destination.toLowerCase()) {
+                      return (
+                        <div key={id} className="singleDestination">
+                          <div className="imageDiv">
+                            <img src={img} alt={name} />
+                          </div>
+                          <div className="cardInfo">
+                            <h4 className="name">{name}</h4>
+                            <span className="continent  flex">
+                              <HiOutlineLocationMarker className="icon" />
+                              <span className="name">{location}</span>
                             </span>
-                          </div>
-                          <div className="price">
-                            <h5>{fees}</h5>
+                            <div className="fees flex">
+                              <div className="grade">
+                                <span>
+                                  {grade}
+                                  <small>+1</small>
+                                </span>
+                              </div>
+                              <div className="price">
+                                <h5>{fees}</h5>
+                              </div>
+                            </div>
+                            <div className="desc">
+                              <p>{description}</p>
+                            </div>
+
+                            <Link
+                              to="/hotels/ab"
+                              state={{ options: options, date: date }}
+                            >
+                              <button className="btn flex">
+                                DETAIL
+                                <HiOutlineClipboardCheck className="icon" />
+                              </button>
+                            </Link>
                           </div>
                         </div>
-                        <div className="desc">
-                          <p>{description}</p>
-                        </div>
-                       <Link to={{pathname : "/hotels/ab ", state : "active" }}>
-                       <button className="btn flex">
-                                  DETAIL
-                          <HiOutlineClipboardCheck className="icon" />
-                        </button>
-                       </Link>
-                      </div>
-                    </div>
-                  );
-                }
-              )}
+                      );
+                    }
+                    return null;
+                  }
+                )}
             </div>
           </div>
         </div>
